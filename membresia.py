@@ -53,13 +53,13 @@ class Membresia:
         Metodo que permite cancelar la suscripcion del usuario.
 
         Returns:
-            Membresia: Instancia de la membresía Gratis creada al cancelar la suscripción.
+            Membresia: Instancia de la membresía 'Gratis' creada al cancelar la suscripcion.
         """
         raise NotImplementedError("Método `cancelar_suscripcion` no implementado.")
 
 class Gratis(Membresia):
     """
-    Clase que representa la membresía de tipo Gratis.
+    Clase que representa la membresia de tipo 'Gratis'.
     """
 
     costo = 0
@@ -68,18 +68,18 @@ class Gratis(Membresia):
     def __init__(self, correo_electronico: str, numero_tarjeta: str):
         super().__init__(correo_electronico, numero_tarjeta)
 
-    def cambiar_suscripcion(self, tipo_membresia_nueva: int) -> Membresia:
+    def cambiar_suscripcion(self, tipo_membresia_nueva: int) -> Membresia: #Se devuelve un objeto dfe las opciones de 'Membresia'
         """
         Sobrescribe el método `cambiar_suscripcion` de la clase `Membresia`.
 
         Args:
-            tipo_membresia_nueva (int): Identificador numérico del tipo de membresía nueva.
+            tipo_membresia_nueva (int): Identificador numerico del tipo de membresia nueva.
 
         Returns:
-            Membresia: Instancia de la nueva membresía creada.
+            Membresia: Instancia de la nueva membresia creada.
         """
 
-        if 1 <= tipo_membresia_nueva <= 4:
+        if 1 <= tipo_membresia_nueva <= 4: #construccion de comparacion encadenada para validar la condicion 'if'
             return _crear_nueva_membresia(
                 tipo_membresia_nueva, self.correo_electronico, self.numero_tarjeta
             )
@@ -88,7 +88,7 @@ class Gratis(Membresia):
 
 class Basica(Membresia):
     """
-    Clase que representa la membresía de tipo Básica.
+    Clase que detalla la membresía de tipo Básica.
     """
 
     costo = 3000
@@ -108,7 +108,7 @@ class Basica(Membresia):
             Membresia: Instancia de la nueva membresía creada.
         """
 
-        if 2 <= tipo_membresia_nueva <= 4:
+        if 2 <= tipo_membresia_nueva <= 4: #construccion de comparacion encadenada para validar la condicion 'if'
             return _crear_nueva_membresia(
                 tipo_membresia_nueva, self.correo_electronico, self.numero_tarjeta
             )
@@ -117,7 +117,7 @@ class Basica(Membresia):
 
 class Familiar(Basica):
     """
-    Clase que representa la membresía de tipo Familiar.
+    Clase que detalla la membresía de tipo Familiar.
     """
 
     costo = 5000
@@ -128,9 +128,6 @@ class Familiar(Basica):
     def __init__(self, correo_electronico: str, numero_tarjeta: str):
         super().__init__(correo_electronico, numero_tarjeta)
         self.dias_regalo = 7
-
-    def
-
 
 class SinConexion(Basica):
     costo = 3500
