@@ -44,7 +44,7 @@ class Membresia:
             tipo_membresia_nueva (int): Identificador numerico del tipo de membresia nueva.
 
         Returns:
-            Membresia: Instancia de la nueva membresía creada.
+            Membresia: Instancia de la nueva membresia creada.
         """
         raise NotImplementedError("Método `cambiar_suscripcion` no implementado.") # En Python, la palabra clave raise se utiliza para generar una excepcion manualmente dentro de una funcion.
 
@@ -88,7 +88,7 @@ class Gratis(Membresia):
 
 class Basica(Membresia):
     """
-    Clase que detalla la membresía de tipo Básica.
+    Clase que detalla la membresia de tipo 'Basica'.
     """
 
     costo = 3000
@@ -102,10 +102,10 @@ class Basica(Membresia):
         Sobrescribe el método `cambiar_suscripcion` de la clase `Membresia`.
 
         Args:
-            tipo_membresia_nueva (int): Identificador numérico del tipo de membresía nueva.
+            tipo_membresia_nueva (int): Identificador numerico del tipo de membresia nueva.
 
         Returns:
-            Membresia: Instancia de la nueva membresía creada.
+            Membresia: Instancia de la nueva membresia creada.
         """
 
         if 2 <= tipo_membresia_nueva <= 4: #construccion de comparacion encadenada para validar la condicion 'if'
@@ -117,7 +117,7 @@ class Basica(Membresia):
 
 class Familiar(Basica):
     """
-    Clase que detalla la membresía de tipo Familiar.
+    Clase que detalla la membresia de tipo 'Familiar'.
     """
 
     costo = 5000
